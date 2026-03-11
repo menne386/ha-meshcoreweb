@@ -1,3 +1,3 @@
 #!/bin/bash
 
-scp * root@homeassistant:~/addons/MeshCoreWeb
+scp MeshCoreWeb/* root@homeassistant:~/addons/MeshCoreWeb
