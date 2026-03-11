@@ -8,6 +8,7 @@ apparmor: false
 panel_admin: false
 ingress: true
 ingress_port: 5800
+uart: true
 ports:
   5800/tcp: null
   5900/tcp: null
