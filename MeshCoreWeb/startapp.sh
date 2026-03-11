@@ -37,6 +37,13 @@ ls -lha "${XDG_DATA_HOME}"
 xdg-user-dirs-update
 xdg-user-dir DOCUMENTS
 
+set | grep -e DBUS_ -e DISPL
+
+dunst --startup_notification --verbosity DEBUG &
+
+
+
+
 
 MESHCORE_BIN=$(find /opt/meshcore -maxdepth 3 -type f -name "MeshCore" | head -n 1)
 if [ -z "${MESHCORE_BIN}" ]; then

@@ -1,0 +1,3 @@
+[add-all-notifications-to-log]
+    summary = "*"
+    script = /notify.sh

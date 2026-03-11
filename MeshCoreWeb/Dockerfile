@@ -38,32 +38,9 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     xdg-user-dirs \
     && rm -rf /var/lib/apt/lists/*
 
-#    RUN add-pkg \
-#    curl \
-#    unzip \
-#    ca-certificates \
-#    mesa-dri-gallium     mesa-va-gallium     libva-intel-driver \
-#    gtk+3.0 \
-#    glib \
-#    xz-libs \
-#    libstdc++ \
-#    libusb \
-
-
-
-    # GTK3 + GLib (Flutter Linux runtime)
-    #libgtk-3-0 \
-    #libglib2.0-0 \
-    # Other libs bundled Flutter apps commonly need
-    #libgl1 \
-    #libglx-mesa0 \
-    #libegl1 \
-    #libblkid1 \
-    #liblzma5 \
-    #libstdc++6 \
-    # USB/serial passthrough support
-    #libusb-1.0-0 \
-    #udev 
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    dunst \
+    && rm -rf /var/lib/apt/lists/*
 
 
 # ---------------------------------------------------------------------------
@@ -85,14 +62,18 @@ RUN curl -fsSL "${MESHCORE_URL}" -o /tmp/meshcore.zip \
 # Persistent config volume (device settings, contacts, keys)
 # ---------------------------------------------------------------------------
 VOLUME ["/config"]
-
+RUN mkdir -p /root/.config/dunst
 RUN chmod 777 -R /root
 
 # ---------------------------------------------------------------------------
 # Start script — called by jlesage/baseimage-gui to launch the app
 # ---------------------------------------------------------------------------
 COPY startapp.sh /startapp.sh
+COPY notify.sh /notify.sh
+COPY dunstrc /dunstrc
+RUN cat /dunstrc >> /etc/xdg/dunst/dunstrc
 RUN chmod +x /startapp.sh
+RUN chmod +x /notify.sh
 
 # ---------------------------------------------------------------------------
 # Ports
