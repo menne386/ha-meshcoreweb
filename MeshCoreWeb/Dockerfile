@@ -72,8 +72,7 @@ COPY startapp.sh /startapp.sh
 COPY notify.sh /notify.sh
 COPY dunstrc /dunstrc
 RUN cat /dunstrc >> /etc/xdg/dunst/dunstrc
-RUN chmod +x /startapp.sh
-RUN chmod +x /notify.sh
+RUN chmod +x /startapp.sh /notify.sh 
 
 # ---------------------------------------------------------------------------
 # Ports
