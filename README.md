@@ -7,10 +7,18 @@ This is an experimental MeshCore client addon/app for Home Assistant that embeds
 ## Features
 
 - Full MeshCore application access within Home Assistant
-- Remote display via noVNC
+- Embed the full desktop app using noVNC
 - WiFi companion support
-- Saves Config & Messages to HomeAssistant config folder
-- Experimental implementation
+- Saves app configuration & message database to HomeAssistant config folder
+
+## Planned features
+
+- Pass on the notifications from the app to Home Assistant
+
+
+## Wishlist
+
+- Allow for home-assistant to send messages through this app
 
 ## Installation
 
@@ -19,11 +27,14 @@ The navigate to Apps > Install an App. Then find "Menne's HA App Repository" and
 
 ## Usage
 
-Once installed, the MeshCore web interface will be available as an embedded component in Home Assistant.
+Once installed, the MeshCore interface will be available as an embedded component in Home Assistant.
 
 ## Status
 
 ⚠️ **Experimental** - This integration is in early development and may change significantly.
+
+The upstream MeshCore app I am using does not have support for USB -or- BLE Companions.
+You need to flash a WiFi companion for this to work. 
 
 ## License
 
