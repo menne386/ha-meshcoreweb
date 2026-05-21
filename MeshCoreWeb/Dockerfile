@@ -12,7 +12,7 @@ FROM jlesage/baseimage-gui:debian-13-v4.11.2
 # Metadata
 # ---------------------------------------------------------------------------
 LABEL maintainer="mk_throwable@outlook.com"
-LABEL description="MeshCore v1.41.0 desktop client running in a browser via noVNC"
+LABEL description="MeshCore v1.44.0 desktop client running in a browser via noVNC"
 
 # ---------------------------------------------------------------------------
 # App name shown in the noVNC title bar
@@ -46,8 +46,8 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 # ---------------------------------------------------------------------------
 # Download and extract the pre-built MeshCore Linux x86_64 bundle
 # ---------------------------------------------------------------------------
-ENV MESHCORE_VERSION=1.41.0
-ENV MESHCORE_BUILD=66-3c66fd5
+ENV MESHCORE_VERSION=1.44.0
+ENV MESHCORE_BUILD=70-86c0436
 ENV MESHCORE_ZIP=MeshCore-v${MESHCORE_VERSION}+${MESHCORE_BUILD}-linux-x86_64.zip
 ENV MESHCORE_URL=https://files.liamcottle.net/MeshCore/v${MESHCORE_VERSION}/${MESHCORE_ZIP}
 ENV MESHCORE_HOME=/opt/meshcore
